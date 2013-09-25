@@ -1,9 +1,10 @@
-package controller;
+package controller.ctrl;
 
 import java.util.ArrayList;
 
 import model.business.EventoBo;
 import model.data.business.Evento;
+import model.data.business.Pessoa;
 
 public class EventoController {
 
@@ -13,8 +14,7 @@ public class EventoController {
         eventoBo = new EventoBo();
     }
     
-    public boolean salvarEvento() {
-        Evento evento = new Evento();
+    public boolean salvarEvento(Evento evento) {
         return eventoBo.incluirEvento(evento);
     }
     
@@ -24,5 +24,9 @@ public class EventoController {
     
     public ArrayList<Evento> pesquisarEventosCadastrados() {
         return eventoBo.pesquisarEventosCadastrados();
+    }
+    
+    public ArrayList<Evento> pesquisarEventosPorPessoa(Pessoa pessoa) {
+        return eventoBo.pesquisarEventoPorPessoa(pessoa);
     }
 }
